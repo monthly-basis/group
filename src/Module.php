@@ -41,6 +41,11 @@ class Module
                         $serviceManager->get(GroupTable\GroupUser::class)
                     );
                 },
+                GroupService\IsUserInGroup::class => function ($serviceManager) {
+                    return new GroupService\IsUserInGroup(
+                        $serviceManager->get(GroupTable\GroupUser::class)
+                    );
+                },
                 GroupService\Groups\Count::class => function ($serviceManager) {
                     return new GroupService\Groups\Count(
                         $serviceManager->get(GroupTable\GroupUser::class)

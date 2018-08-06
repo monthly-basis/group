@@ -58,6 +58,21 @@ class GroupUser
         return (int) $row['count'];
     }
 
+    public function selectCountWhereGroupIdAndUserId(
+        int $groupId,
+        int $userId
+    ): int {
+        $sql = '
+            SELECT COUNT(*) AS `count`
+              FROM `group_user`
+             WHERE `group_id` = ?
+               AND `user_id` = ?
+                 ;
+        ';
+        $row = $this->adapter->query($sql)->execute([$userId])->current();
+        return (int) $row['count'];
+    }
+
     /**
      * @return Generator
      */
