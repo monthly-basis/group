@@ -71,10 +71,36 @@ class GroupUserTest extends TableTestCase
 
     public function testSelectWhereUserId()
     {
+        $this->groupUserTable->insert(
+            1,
+            1
+        );
+        $this->groupUserTable->insert(
+            16,
+            1
+        );
+        $this->groupUserTable->insert(
+            32,
+            2
+        );
+        $this->groupUserTable->insert(
+            64,
+            1
+        );
+
         $rows = $this->groupUserTable->selectWhereUserId(1);
         $this->assertInstanceOf(
             Generator::class,
             $rows
+        );
+
+        $groupIds = [];
+        foreach ($rows as $row) {
+            $groupIds[] = $row['group_id'];
+        }
+        $this->assertEquals(
+            [1, 16, 64],
+            $groupIds
         );
     }
 }
