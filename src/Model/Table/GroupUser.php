@@ -69,7 +69,11 @@ class GroupUser
                AND `user_id` = ?
                  ;
         ';
-        $row = $this->adapter->query($sql)->execute([$userId])->current();
+        $parameters = [
+            $groupId,
+            $userId,
+        ];
+        $row = $this->adapter->query($sql)->execute($parameters)->current();
         return (int) $row['count'];
     }
 
