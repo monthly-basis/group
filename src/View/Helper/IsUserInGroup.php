@@ -18,7 +18,7 @@ class IsUserInGroup extends AbstractHelper
         UserEntity\User $userEntity,
         GroupEntity\Group $groupEntity
     ): bool {
-        return $this->isUserInGroupService(
+        return $this->isUserInGroupService->isUserInGroup(
             $userEntity,
             $groupEntity
         );
