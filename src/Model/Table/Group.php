@@ -50,9 +50,9 @@ class Group
             SELECT `group`.`group_id`
                  , `group`.`name`
               FROM `group`
-             WHERE `group`.`group_id` = ?
+             WHERE `group`.`name` = ?
                  ;
         ';
-        return $this->adapter->query($sql)->execute([$userId])->current();
+        return $this->adapter->query($sql)->execute([$name])->current();
     }
 }
