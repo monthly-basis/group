@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\GroupTest\Model\Table;
 
+use Generator;
 use LeoGalleguillos\Group\Model\Table as GroupTable;
 use LeoGalleguillos\GroupTest\TableTestCase;
 use Zend\Db\Adapter\Adapter;
@@ -53,6 +54,15 @@ class GroupUserTest extends TableTestCase
         $this->assertSame(
             0,
             $this->groupUserTable->selectCount()
+        );
+    }
+
+    public function testSelectWhereUserId()
+    {
+        $rows = $this->groupUserTable->selectWhereUserId(1);
+        $this->assertInstanceOf(
+            Generator::class,
+            $rows
         );
     }
 }
