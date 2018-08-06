@@ -72,6 +72,8 @@ class GroupUser
               JOIN `group_user`
              USING (`group_id`)
              WHERE `user_id` = ?
+             ORDER
+                BY `group`.`name` ASC
                  ;
         ';
         $result = $this->adapter->query($sql)->execute([$userId]);

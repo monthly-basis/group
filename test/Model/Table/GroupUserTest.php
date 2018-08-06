@@ -99,7 +99,7 @@ class GroupUserTest extends TableTestCase
             $groupIds[] = $row['group_id'];
         }
         $this->assertEquals(
-            [1, 2],
+            [2, 1],
             $groupIds
         );
     }
