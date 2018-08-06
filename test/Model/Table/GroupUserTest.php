@@ -10,21 +10,14 @@ use Zend\Db\Adapter\Exception\InvalidQueryException;
 
 class GroupUserTest extends TableTestCase
 {
-    /**
-     * @var string
-     */
-    protected $sqlPath = __DIR__ . '/../../..' . '/sql/leogalle_test/group/';
-
     protected function setUp()
     {
-        $configArray     = require(__DIR__ . '/../../../config/autoload/local.php');
-        $configArray     = $configArray['db']['adapters']['leogalle_test'];
-        $this->adapter   = new Adapter($configArray);
+        $configArray   = require($_SERVER['PWD'] . '/config/autoload/local.php');
+        $configArray   = $configArray['db']['adapters']['leogalle_test'];
+        $this->adapter = new Adapter($configArray);
 
-        $this->setForeignKeyChecks0();
         $this->dropTables();
         $this->createTables();
-        $this->setForeignKeyChecks1();
 
         $this->groupTable     = new GroupTable\Group($this->adapter);
         $this->groupUserTable = new GroupTable\GroupUser($this->adapter);
