@@ -14,11 +14,17 @@ class Module
             'view_helpers' => [
                 'aliases' => [
                     'getGroupFactory' => GroupHelper\Factory\Group::class,
+                    'isUserInGroup'   => GroupHelper\IsUserInGroup::class,
                 ],
                 'factories' => [
                     GroupHelper\Factory\Group::class => function ($serviceManager) {
                         return new GroupHelper\Factory\Group(
                             $serviceManager->get(GroupFactory\Group::class)
+                        );
+                    },
+                    GroupHelper\IsUserInGroup::class => function ($serviceManager) {
+                        return new GroupHelper\IsUserInGroup(
+                            $serviceManager->get(GroupService\IsUserInGroup::class)
                         );
                     },
                 ],
