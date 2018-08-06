@@ -26,4 +26,11 @@ class Group
 
         return $groupEntity;
     }
+
+    public function buildFromName(string $name): GroupEntity\Group
+    {
+        return $this->buildFromArray(
+            $this->groupTable->selectWhereName($name)
+        );
+    }
 }

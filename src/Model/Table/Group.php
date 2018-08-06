@@ -43,4 +43,16 @@ class Group
         $row = $this->adapter->query($sql)->execute()->current();
         return (int) $row['count'];
     }
+
+    public function selectWhereName(string $name): array
+    {
+        $sql = '
+            SELECT `group`.`group_id`
+                 , `group`.`name`
+              FROM `group`
+             WHERE `group`.`group_id` = ?
+                 ;
+        ';
+        return $this->adapter->query($sql)->execute([$userId])->current();
+    }
 }
