@@ -26,6 +26,7 @@ class GroupUserTest extends TableTestCase
         $this->createTables();
         $this->setForeignKeyChecks1();
 
+        $this->groupTable     = new GroupTable\Group($this->adapter);
         $this->groupUserTable = new GroupTable\GroupUser($this->adapter);
     }
 
@@ -71,21 +72,20 @@ class GroupUserTest extends TableTestCase
 
     public function testSelectWhereUserId()
     {
+        $this->groupTable->insert('foo');
+        $this->groupTable->insert('bar');
+        $this->groupTable->insert('baz');
         $this->groupUserTable->insert(
             1,
             1
         );
         $this->groupUserTable->insert(
-            16,
+            2,
             1
         );
         $this->groupUserTable->insert(
-            32,
+            3,
             2
-        );
-        $this->groupUserTable->insert(
-            64,
-            1
         );
 
         $rows = $this->groupUserTable->selectWhereUserId(1);
@@ -99,7 +99,7 @@ class GroupUserTest extends TableTestCase
             $groupIds[] = $row['group_id'];
         }
         $this->assertEquals(
-            [1, 16, 64],
+            [1, 2],
             $groupIds
         );
     }

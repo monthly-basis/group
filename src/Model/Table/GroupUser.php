@@ -46,13 +46,19 @@ class GroupUser
         return (int) $row['count'];
     }
 
+    /**
+     * @return Generator
+     */
     public function selectWhereUserId(int $userId): Generator
     {
         $sql = '
-            SELECT `group_user_id`
-                 , `group_id`
-                 , `user_id`
-              FROM `group_user`
+            SELECT `group`.`group_id`
+                 , `group`.`name`
+                 , `group_user`.`group_user_id`
+                 , `group_user`.`user_id`
+              FROM `group`
+              JOIN `group_user`
+             USING (`group_id`)
              WHERE `user_id` = ?
                  ;
         ';

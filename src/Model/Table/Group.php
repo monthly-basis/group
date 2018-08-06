@@ -15,6 +15,24 @@ class Group
         $this->adapter = $adapter;
     }
 
+    public function insert(string $name): int
+    {
+        $sql = '
+            INSERT
+              INTO `group`
+                   (`name`)
+            VALUES (?)
+                 ;
+        ';
+        $parameters = [
+            $name,
+        ];
+        return $this->adapter
+                    ->query($sql)
+                    ->execute($parameters)
+                    ->getGeneratedValue();
+    }
+
     public function selectCount(): int
     {
         $sql = '
