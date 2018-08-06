@@ -16,6 +16,25 @@ class GroupUser
         $this->adapter = $adapter;
     }
 
+    public function insert(int $groupId, int $userId): int
+    {
+        $sql = '
+            INSERT
+              INTO `group_user`
+                   (`group_id`, `user_id`)
+            VALUES (?, ?)
+                 ;
+        ';
+        $parameters = [
+            $groupId,
+            $userId,
+        ];
+        return $this->adapter
+                    ->query($sql)
+                    ->execute($parameters)
+                    ->getGeneratedValue();
+    }
+
     public function selectCount(): int
     {
         $sql = '

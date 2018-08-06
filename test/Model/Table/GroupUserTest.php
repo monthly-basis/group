@@ -49,10 +49,22 @@ class GroupUserTest extends TableTestCase
         );
     }
 
-    public function testSelectCount()
+    public function testInsertAndSelectCount()
     {
         $this->assertSame(
             0,
+            $this->groupUserTable->selectCount()
+        );
+
+        $this->groupUserTable->insert(1, 1);
+        $this->assertSame(
+            1,
+            $this->groupUserTable->selectCount()
+        );
+
+        $this->groupUserTable->insert(1, 2);
+        $this->assertSame(
+            2,
             $this->groupUserTable->selectCount()
         );
     }
