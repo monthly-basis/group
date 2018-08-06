@@ -44,4 +44,12 @@ class GroupTest extends TableTestCase
     {
         $this->assertInstanceOf(GroupTable\Group::class, $this->groupTable);
     }
+
+    public function testSelectCount()
+    {
+        $this->assertSame(
+            0,
+            $this->groupTable->selectCount()
+        );
+    }
 }

@@ -15,11 +15,11 @@ class Group
         $this->adapter = $adapter;
     }
 
-    public function selectCount()
+    public function selectCount(): int
     {
         $sql = '
             SELECT COUNT(*) AS `count`
-              FROM `post`
+              FROM `group`
                  ;
         ';
         $row = $this->adapter->query($sql)->execute()->current();
