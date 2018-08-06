@@ -4,6 +4,7 @@ namespace LeoGalleguillos\Group;
 use LeoGalleguillos\Group\Model\Factory as GroupFactory;
 use LeoGalleguillos\Group\Model\Service as GroupService;
 use LeoGalleguillos\Group\Model\Table as GroupTable;
+use LeoGalleguillos\Group\View\Helper as GroupHelper;
 
 class Module
 {
@@ -12,8 +13,14 @@ class Module
         return [
             'view_helpers' => [
                 'aliases' => [
+                    'getGroupFactory' => GroupHelper\Factory\Group::class,
                 ],
                 'factories' => [
+                    GroupHelper\Factory\Group::class => function ($serviceManager) {
+                        return new GroupHelper\Factory\Group(
+                            $serviceManager->get(GroupFactory\Group::class)
+                        );
+                    },
                 ],
             ],
         ];
