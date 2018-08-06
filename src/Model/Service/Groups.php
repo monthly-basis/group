@@ -1,6 +1,7 @@
 <?php
 namespace LeoGalleguillos\Group\Model\Service;
 
+use Generator;
 use LeoGalleguillos\Group\Model\Entity as GroupEntity;
 use LeoGalleguillos\Group\Model\Factory as GroupFactory;
 use LeoGalleguillos\Group\Model\Table as GroupTable;
@@ -16,14 +17,14 @@ class Groups
         $this->groupUserTable = $groupUserTable;
     }
 
-    public function getGroups(UserEntity\User $userEntity): array
+    public function getGroups(UserEntity\User $userEntity): Generator
     {
         $generator = $this->groupUserTable->selectWhereUserId(
             $userEntity->getUserId()
         );
 
         foreach ($generator as $array) {
-            var_dump($array);
+            yield $this->groupFactory->buildFromArray($array);
         }
     }
 }

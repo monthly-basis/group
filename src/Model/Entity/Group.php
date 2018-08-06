@@ -1,7 +1,7 @@
 <?php
 namespace LeoGalleguillos\Group\Model\Entity;
 
-use LeoGalleguillos\Group\Model\Entity as GroupEntity
+use LeoGalleguillos\Group\Model\Entity as GroupEntity;
 
 class Group
 {
