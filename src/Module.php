@@ -5,6 +5,7 @@ use LeoGalleguillos\Group\Model\Factory as GroupFactory;
 use LeoGalleguillos\Group\Model\Service as GroupService;
 use LeoGalleguillos\Group\Model\Table as GroupTable;
 use LeoGalleguillos\Group\View\Helper as GroupHelper;
+use LeoGalleguillos\User\Model\Service as UserService;
 
 class Module
 {
@@ -50,6 +51,14 @@ class Module
                 GroupService\IsUserInGroup::class => function ($serviceManager) {
                     return new GroupService\IsUserInGroup(
                         $serviceManager->get(GroupTable\GroupUser::class)
+                    );
+                },
+                GroupService\IsUserLoggedInAndInGroupName::class => function ($serviceManager) {
+                    return new GroupService\IsUserLoggedInAndInGroupName(
+                        $serviceManager->get(GroupFactory\Group::class),
+                        $serviceManager->get(GroupService\IsUserInGroup::class),
+                        $serviceManager->get(UserService\LoggedIn::class),
+                        $serviceManager->get(UserService\LoggedInUser::class)
                     );
                 },
                 GroupService\Groups\Count::class => function ($serviceManager) {
