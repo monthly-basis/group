@@ -48,6 +48,13 @@ class Module
                         $serviceManager->get(GroupTable\GroupUser::class)
                     );
                 },
+                GroupService\IsLoggedInUserInGroupName::class => function ($serviceManager) {
+                    return new GroupService\IsLoggedInUserInGroupName(
+                        $serviceManager->get(GroupFactory\Group::class),
+                        $serviceManager->get(GroupService\IsUserInGroup::class),
+                        $serviceManager->get(UserService\LoggedInUser::class)
+                    );
+                },
                 GroupService\IsUserInGroup::class => function ($serviceManager) {
                     return new GroupService\IsUserInGroup(
                         $serviceManager->get(GroupTable\GroupUser::class)
