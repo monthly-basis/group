@@ -15,12 +15,19 @@ class Module
             'view_helpers' => [
                 'aliases' => [
                     'getGroupFactory' => GroupHelper\Factory\Group::class,
+                    'isLoggedInUserInGroupName'   => GroupHelper\IsLoggedInUserInGroupName::class,
                     'isUserInGroup'   => GroupHelper\IsUserInGroup::class,
                 ],
                 'factories' => [
                     GroupHelper\Factory\Group::class => function ($serviceManager) {
                         return new GroupHelper\Factory\Group(
                             $serviceManager->get(GroupFactory\Group::class)
+                        );
+
+                    },
+                    GroupHelper\IsLoggedInUserInGroupName::class => function ($serviceManager) {
+                        return new GroupHelper\IsLoggedInUserInGroupName(
+                            $serviceManager->get(GroupService\IsLoggedInUserInGroupName::class)
                         );
                     },
                     GroupHelper\IsUserInGroup::class => function ($serviceManager) {
