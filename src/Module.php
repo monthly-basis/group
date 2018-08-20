@@ -17,6 +17,7 @@ class Module
                     'getGroupFactory' => GroupHelper\Factory\Group::class,
                     'isLoggedInUserInGroupName'   => GroupHelper\IsLoggedInUserInGroupName::class,
                     'isUserInGroup'   => GroupHelper\IsUserInGroup::class,
+                    'isVisitorLoggedInAndInGroupName' => GroupHelper\VisitorLoggedInAndInGroupName::class,
                 ],
                 'factories' => [
                     GroupHelper\Factory\Group::class => function ($serviceManager) {
@@ -33,6 +34,11 @@ class Module
                     GroupHelper\IsUserInGroup::class => function ($serviceManager) {
                         return new GroupHelper\IsUserInGroup(
                             $serviceManager->get(GroupService\IsUserInGroup::class)
+                        );
+                    },
+                    GroupHelper\VisitorLoggedInAndInGroupName::class => function ($serviceManager) {
+                        return new GroupHelper\VisitorLoggedInAndInGroupName(
+                            $serviceManager->get(GroupService\VisitorLoggedInAndInGroupName::class)
                         );
                     },
                 ],
