@@ -67,17 +67,17 @@ class Module
                         $serviceManager->get(GroupTable\GroupUser::class)
                     );
                 },
-                GroupService\IsUserLoggedInAndInGroupName::class => function ($serviceManager) {
-                    return new GroupService\IsUserLoggedInAndInGroupName(
+                GroupService\Groups\Count::class => function ($serviceManager) {
+                    return new GroupService\Groups\Count(
+                        $serviceManager->get(GroupTable\GroupUser::class)
+                    );
+                },
+                GroupService\VisitorLoggedInAndInGroupName::class => function ($serviceManager) {
+                    return new GroupService\VisitorLoggedInAndInGroupName(
                         $serviceManager->get(GroupFactory\Group::class),
                         $serviceManager->get(GroupService\IsUserInGroup::class),
                         $serviceManager->get(UserService\LoggedIn::class),
                         $serviceManager->get(UserService\LoggedInUser::class)
-                    );
-                },
-                GroupService\Groups\Count::class => function ($serviceManager) {
-                    return new GroupService\Groups\Count(
-                        $serviceManager->get(GroupTable\GroupUser::class)
                     );
                 },
                 GroupTable\Group::class => function ($serviceManager) {

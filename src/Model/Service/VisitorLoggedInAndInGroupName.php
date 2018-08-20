@@ -8,7 +8,7 @@ use LeoGalleguillos\Group\Model\Table as GroupTable;
 use LeoGalleguillos\User\Model\Entity as UserEntity;
 use LeoGalleguillos\User\Model\Service as UserService;
 
-class IsUserLoggedInAndInGroupName
+class VisitorLoggedInAndInGroupName
 {
     public function __construct(
         GroupFactory\Group $groupFactory,
@@ -22,7 +22,7 @@ class IsUserLoggedInAndInGroupName
         $this->loggedInUserService  = $loggedInUserService;
     }
 
-    public function isUserLoggedInAndInGroupName(
+    public function isVisitorLoggedInAndInGroupName(
         string $groupName
     ): bool {
         if (!$this->loggedInService->isLoggedIn()) {
