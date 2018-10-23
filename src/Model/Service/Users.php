@@ -5,20 +5,35 @@ use Generator;
 use LeoGalleguillos\Group\Model\Entity as GroupEntity;
 use LeoGalleguillos\Group\Model\Table as GroupTable;
 use LeoGalleguillos\User\Model\Entity as UserEntity;
+use LeoGalleguillos\User\Model\Factory as UserFactory;
 
 class Users
 {
     public function __construct(
-        GroupTable\GroupUser $groupUserTable
+        GroupTable\GroupUser $groupUserTable,
+        UserFactory\User $userFactory
     ) {
         $this->groupUserTable = $groupUserTable;
+        $this->userFactory    = $userFactory;
     }
 
+    /**
+     * Get users in group.
+     *
+     * @param GroupEntity\Group $groupEntity
+     * @return Generator
+     * @yield UserEntity\User
+     */
     public function getUsers(
         GroupEntity\Group $groupEntity
     ): Generator {
-        $this->groupUserTable->selectWhereGroupId(
+        $generator = $this->groupUserTable->selectWhereGroupId(
             $groupEntity->getGroupIp()
         );
+        foreach ($generator as $array) {
+            yield $this->userFactory->buildFromUserId(
+                $array['user_id']
+            );
+        }
     }
 }
