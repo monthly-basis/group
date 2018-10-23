@@ -80,6 +80,29 @@ class GroupUser
     /**
      * @return Generator
      */
+    public function selectWhereGroupId(int $groupId): Generator
+    {
+        $sql = '
+            SELECT `group_user`.`group_user_id`
+                 , `group_user`.`group_id`
+                 , `group_user`.`user_id`
+              FROM `group_user`
+             WHERE `group_user`.`group_id` = ?
+             ORDER
+                BY `group_user`.`user_id` ASC
+                 ;
+        ';
+        $parameters = [
+            $groupId,
+        ];
+        foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
+            yield $array;
+        }
+    }
+
+    /**
+     * @return Generator
+     */
     public function selectWhereUserId(int $userId): Generator
     {
         $sql = '
