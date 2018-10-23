@@ -28,7 +28,7 @@ class Users
         GroupEntity\Group $groupEntity
     ): Generator {
         $generator = $this->groupUserTable->selectWhereGroupId(
-            $groupEntity->getGroupIp()
+            $groupEntity->getGroupId()
         );
         foreach ($generator as $array) {
             yield $this->userFactory->buildFromUserId(
