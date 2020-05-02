@@ -38,6 +38,47 @@ class GroupUserTest extends TableTestCase
         );
     }
 
+    public function test_selectCountWhereGroupNameAndUserId_multipleRows_variousResults()
+    {
+        $this->assertSame(
+            '0',
+            $this->groupUserTable
+                ->selectCountWhereGroupNameAndUserId('Tutor', 123)
+                ->current()['count']
+        );
+
+        $this->groupTable->insert('Webmaster');
+        $this->groupTable->insert('Admin');
+        $this->groupUserTable->insert(1, 123);
+        $this->groupUserTable->insert(2, 123);
+        $this->groupUserTable->insert(2, 456);
+
+        $this->assertSame(
+            '1',
+            $this->groupUserTable
+                ->selectCountWhereGroupNameAndUserId('Webmaster', 123)
+                ->current()['count']
+        );
+        $this->assertSame(
+            '1',
+            $this->groupUserTable
+                ->selectCountWhereGroupNameAndUserId('Admin', 123)
+                ->current()['count']
+        );
+        $this->assertSame(
+            '0',
+            $this->groupUserTable
+                ->selectCountWhereGroupNameAndUserId('Webmaster', 456)
+                ->current()['count']
+        );
+        $this->assertSame(
+            '1',
+            $this->groupUserTable
+                ->selectCountWhereGroupNameAndUserId('Admin', 456)
+                ->current()['count']
+        );
+    }
+
     public function testSelectWhereUserId()
     {
         $this->groupTable->insert('foo');

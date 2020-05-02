@@ -2,7 +2,8 @@
 namespace LeoGalleguillos\Group\Model\Table;
 
 use Generator;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Driver\Pdo\Result;
 
 class GroupUser
 {
@@ -98,6 +99,29 @@ class GroupUser
         foreach ($this->adapter->query($sql)->execute($parameters) as $array) {
             yield $array;
         }
+    }
+
+    public function selectCountWhereGroupNameAndUserId(
+        string $groupName,
+        int $userId
+    ): Result {
+        $sql = '
+            SELECT COUNT(*) AS `count`
+
+              FROM `group`
+
+              JOIN `group_user`
+             USING (`group_id`)
+
+             WHERE `group`.`name` = ?
+               AND `group_user`.`user_id` = ?
+                 ;
+        ';
+        $parameters = [
+            $groupName,
+            $userId,
+        ];
+        return $this->adapter->query($sql)->execute($parameters);
     }
 
     /**
