@@ -89,7 +89,6 @@ class Module
                     return new GroupService\VisitorLoggedInAndInGroupName(
                         $serviceManager->get(GroupFactory\Group::class),
                         $serviceManager->get(GroupService\IsUserInGroup::class),
-                        $serviceManager->get(UserService\LoggedIn::class),
                         $serviceManager->get(UserService\LoggedInUser::class)
                     );
                 },
