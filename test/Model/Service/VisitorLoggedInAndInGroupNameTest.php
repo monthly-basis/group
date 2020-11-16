@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class VisitorLoggedInAndInGroupNameTest extends TestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->groupFactoryMock = $this->createMock(
             GroupFactory\Group::class

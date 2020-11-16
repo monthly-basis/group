@@ -10,7 +10,7 @@ use Zend\Db\Adapter\Exception\InvalidQueryException;
 
 class GroupUserTest extends TableTestCase
 {
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->dropAndCreateTables(['group', 'group_user']);
 
