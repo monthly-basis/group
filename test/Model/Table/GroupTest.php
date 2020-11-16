@@ -2,7 +2,7 @@
 namespace LeoGalleguillos\GroupTest\Model\Table;
 
 use LeoGalleguillos\Group\Model\Table as GroupTable;
-use LeoGalleguillos\Test\TableTestCase;
+use MonthlyBasis\LaminasTest\TableTestCase;
 use Zend\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;
 use Zend\Db\Adapter\Exception\InvalidQueryException;
