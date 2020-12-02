@@ -4,8 +4,8 @@ namespace LeoGalleguillos\Group\Model\Service;
 use Generator;
 use LeoGalleguillos\Group\Model\Entity as GroupEntity;
 use LeoGalleguillos\Group\Model\Table as GroupTable;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
-use LeoGalleguillos\User\Model\Factory as UserFactory;
+use MonthlyBasis\User\Model\Entity as UserEntity;
+use MonthlyBasis\User\Model\Factory as UserFactory;
 
 class Users
 {

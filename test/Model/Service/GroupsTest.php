@@ -6,7 +6,7 @@ use LeoGalleguillos\Group\Model\Entity as GroupEntity;
 use LeoGalleguillos\Group\Model\Factory as GroupFactory;
 use LeoGalleguillos\Group\Model\Service as GroupService;
 use LeoGalleguillos\Group\Model\Table as GroupTable;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
+use MonthlyBasis\User\Model\Entity as UserEntity;
 use PHPUnit\Framework\TestCase;
 
 class GroupsTest extends TestCase

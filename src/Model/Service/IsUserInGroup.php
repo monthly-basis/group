@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Group\Model\Service;
 
 use LeoGalleguillos\Group\Model\Entity as GroupEntity;
 use LeoGalleguillos\Group\Model\Table as GroupTable;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
+use MonthlyBasis\User\Model\Entity as UserEntity;
 
 class IsUserInGroup
 {

@@ -5,8 +5,8 @@ use LeoGalleguillos\Group\Model\Factory as GroupFactory;
 use LeoGalleguillos\Group\Model\Service as GroupService;
 use LeoGalleguillos\Group\Model\Table as GroupTable;
 use LeoGalleguillos\Group\View\Helper as GroupHelper;
-use LeoGalleguillos\User\Model\Factory as UserFactory;
-use LeoGalleguillos\User\Model\Service as UserService;
+use MonthlyBasis\User\Model\Factory as UserFactory;
+use MonthlyBasis\User\Model\Service as UserService;
 
 class Module
 {

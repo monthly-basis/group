@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a155d7302879267446bd78bd76d530f",
+    "content-hash": "7b8877e6d39d5b9a17dbb6d81f1b5fd7",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -790,7 +790,7 @@
         },
         {
             "name": "laminas/laminas-servicemanager",
-            "version": "3.4.1",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-servicemanager.git",
@@ -1253,41 +1253,6 @@
             "time": "2020-09-14T14:23:00+00:00"
         },
         {
-            "name": "leo-galleguillos/user",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LeoGalleguillos/User.git",
-                "reference": "e696d80a1ac2cae55200c05cc3c3b98ceb7652dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LeoGalleguillos/User/zipball/e696d80a1ac2cae55200c05cc3c3b98ceb7652dc",
-                "reference": "e696d80a1ac2cae55200c05cc3c3b98ceb7652dc",
-                "shasum": ""
-            },
-            "require": {
-                "laminas/laminas-db": "^2.9",
-                "laminas/laminas-test": "^3.1",
-                "monthly-basis/flash": "^2.0",
-                "monthly-basis/laminas-test": "^2.0",
-                "monthly-basis/re-captcha": "^3.0",
-                "monthly-basis/string": "^3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LeoGalleguillos\\User\\": "src/",
-                    "LeoGalleguillos\\UserTest\\": "test/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "time": "2020-11-27T01:49:42+00:00"
-        },
-        {
             "name": "monthly-basis/flash",
             "version": "v2.0.0",
             "source": {
@@ -1408,6 +1373,41 @@
                 "MIT"
             ],
             "time": "2020-11-19T06:15:40+00:00"
+        },
+        {
+            "name": "monthly-basis/user",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/monthly-basis/user.git",
+                "reference": "0a52bcbe706719d88c7709c6ac443b4da6cb0988"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/monthly-basis/user/zipball/0a52bcbe706719d88c7709c6ac443b4da6cb0988",
+                "reference": "0a52bcbe706719d88c7709c6ac443b4da6cb0988",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-db": "^2.9",
+                "laminas/laminas-test": "^3.1",
+                "monthly-basis/flash": "^2.0",
+                "monthly-basis/laminas-test": "^2.0",
+                "monthly-basis/re-captcha": "^3.0",
+                "monthly-basis/string": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MonthlyBasis\\User\\": "src/",
+                    "MonthlyBasis\\UserTest\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2020-12-01T00:17:24+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2024,16 +2024,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.12",
+            "version": "8.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "f40cf5be80a7d177494592ad1b2db3f64ea1dee3"
+                "reference": "8e86be391a58104ef86037ba8a846524528d784e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f40cf5be80a7d177494592ad1b2db3f64ea1dee3",
-                "reference": "f40cf5be80a7d177494592ad1b2db3f64ea1dee3",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8e86be391a58104ef86037ba8a846524528d784e",
+                "reference": "8e86be391a58104ef86037ba8a846524528d784e",
                 "shasum": ""
             },
             "require": {
@@ -2103,7 +2103,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2020-11-30T12:23:30+00:00"
+            "time": "2020-12-01T04:53:52+00:00"
         },
         {
             "name": "psr/container",

@@ -3,7 +3,7 @@ namespace LeoGalleguillos\Group\View\Helper;
 
 use LeoGalleguillos\Group\Model\Entity as GroupEntity;
 use LeoGalleguillos\Group\Model\Service as GroupService;
-use LeoGalleguillos\User\Model\Entity as UserEntity;
+use MonthlyBasis\User\Model\Entity as UserEntity;
 use Zend\View\Helper\AbstractHelper;
 
 class IsUserInGroup extends AbstractHelper

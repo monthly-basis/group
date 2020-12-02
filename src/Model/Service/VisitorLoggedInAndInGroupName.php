@@ -4,7 +4,7 @@ namespace LeoGalleguillos\Group\Model\Service;
 use Exception;
 use LeoGalleguillos\Group\Model\Factory as GroupFactory;
 use LeoGalleguillos\Group\Model\Service as GroupService;
-use LeoGalleguillos\User\Model\Service as UserService;
+use MonthlyBasis\User\Model\Service as UserService;
 
 class VisitorLoggedInAndInGroupName
 {

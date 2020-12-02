@@ -3,7 +3,7 @@
 return [
     'modules' => [
         'LeoGalleguillos\Group',
-        'LeoGalleguillos\User',
+        'MonthlyBasis\User',
         'Zend\Db',
         'Zend\Router',
     ],
