@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\Group\Model\Entity;
+namespace MonthlyBasis\Group\Model\Entity;
 
-use LeoGalleguillos\Group\Model\Entity as GroupEntity;
+use MonthlyBasis\Group\Model\Entity as GroupEntity;
 
 class Group
 {

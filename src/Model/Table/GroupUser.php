@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\Group\Model\Table;
+namespace MonthlyBasis\Group\Model\Table;
 
 use Generator;
 use Laminas\Db\Adapter\Adapter;

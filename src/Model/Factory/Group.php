@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\Group\Model\Factory;
+namespace MonthlyBasis\Group\Model\Factory;
 
-use LeoGalleguillos\Group\Model\Entity as GroupEntity;
-use LeoGalleguillos\Group\Model\Table as GroupTable;
+use MonthlyBasis\Group\Model\Entity as GroupEntity;
+use MonthlyBasis\Group\Model\Table as GroupTable;
 
 class Group
 {

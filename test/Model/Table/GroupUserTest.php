@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\GroupTest\Model\Table;
+namespace MonthlyBasis\GroupTest\Model\Table;
 
 use Generator;
-use LeoGalleguillos\Group\Model\Table as GroupTable;
+use MonthlyBasis\Group\Model\Table as GroupTable;
 use MonthlyBasis\LaminasTest\TableTestCase;
 use Zend\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;

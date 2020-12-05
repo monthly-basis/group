@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\Group\View\Helper\Factory;
+namespace MonthlyBasis\Group\View\Helper\Factory;
 
-use LeoGalleguillos\Group\Model\Factory as GroupFactory;
+use MonthlyBasis\Group\Model\Factory as GroupFactory;
 use Zend\View\Helper\AbstractHelper;
 
 class Group extends AbstractHelper

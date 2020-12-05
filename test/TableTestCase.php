@@ -1,5 +1,5 @@
 <?php
-namespace LeoGalleguillos\GroupTest;
+namespace MonthlyBasis\GroupTest;
 
 use Zend\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;

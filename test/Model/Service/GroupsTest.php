@@ -1,11 +1,11 @@
 <?php
-namespace LeoGalleguillos\GroupsTest\Model\Service;
+namespace MonthlyBasis\GroupsTest\Model\Service;
 
 use Generator;
-use LeoGalleguillos\Group\Model\Entity as GroupEntity;
-use LeoGalleguillos\Group\Model\Factory as GroupFactory;
-use LeoGalleguillos\Group\Model\Service as GroupService;
-use LeoGalleguillos\Group\Model\Table as GroupTable;
+use MonthlyBasis\Group\Model\Entity as GroupEntity;
+use MonthlyBasis\Group\Model\Factory as GroupFactory;
+use MonthlyBasis\Group\Model\Service as GroupService;
+use MonthlyBasis\Group\Model\Table as GroupTable;
 use MonthlyBasis\User\Model\Entity as UserEntity;
 use PHPUnit\Framework\TestCase;
 

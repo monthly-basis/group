@@ -1,10 +1,10 @@
 <?php
-namespace LeoGalleguillos\Group;
+namespace MonthlyBasis\Group;
 
-use LeoGalleguillos\Group\Model\Factory as GroupFactory;
-use LeoGalleguillos\Group\Model\Service as GroupService;
-use LeoGalleguillos\Group\Model\Table as GroupTable;
-use LeoGalleguillos\Group\View\Helper as GroupHelper;
+use MonthlyBasis\Group\Model\Factory as GroupFactory;
+use MonthlyBasis\Group\Model\Service as GroupService;
+use MonthlyBasis\Group\Model\Table as GroupTable;
+use MonthlyBasis\Group\View\Helper as GroupHelper;
 use MonthlyBasis\User\Model\Factory as UserFactory;
 use MonthlyBasis\User\Model\Service as UserService;
 

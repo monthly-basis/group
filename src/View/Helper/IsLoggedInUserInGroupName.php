@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\Group\View\Helper;
+namespace MonthlyBasis\Group\View\Helper;
 
-use LeoGalleguillos\Group\Model\Entity as GroupEntity;
-use LeoGalleguillos\Group\Model\Service as GroupService;
+use MonthlyBasis\Group\Model\Entity as GroupEntity;
+use MonthlyBasis\Group\Model\Service as GroupService;
 use MonthlyBasis\User\Model\Entity as UserEntity;
 use Zend\View\Helper\AbstractHelper;
 

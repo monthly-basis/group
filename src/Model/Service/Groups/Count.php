@@ -1,10 +1,10 @@
 <?php
-namespace LeoGalleguillos\Group\Model\Service\Groups;
+namespace MonthlyBasis\Group\Model\Service\Groups;
 
 use Generator;
-use LeoGalleguillos\Group\Model\Entity as GroupEntity;
-use LeoGalleguillos\Group\Model\Factory as GroupFactory;
-use LeoGalleguillos\Group\Model\Table as GroupTable;
+use MonthlyBasis\Group\Model\Entity as GroupEntity;
+use MonthlyBasis\Group\Model\Factory as GroupFactory;
+use MonthlyBasis\Group\Model\Table as GroupTable;
 use MonthlyBasis\User\Model\Entity as UserEntity;
 
 class Count

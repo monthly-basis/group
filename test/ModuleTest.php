@@ -1,7 +1,7 @@
 <?php
-namespace LeoGalleguillos\GroupTest;
+namespace MonthlyBasis\GroupTest;
 
-use LeoGalleguillos\Group\Module;
+use MonthlyBasis\Group\Module;
 use PHPUnit\Framework\TestCase;
 use Zend\Mvc\Application;
 

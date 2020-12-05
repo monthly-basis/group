@@ -1,8 +1,8 @@
 <?php
-namespace LeoGalleguillos\Group\Model\Service;
+namespace MonthlyBasis\Group\Model\Service;
 
-use LeoGalleguillos\Group\Model\Entity as GroupEntity;
-use LeoGalleguillos\Group\Model\Table as GroupTable;
+use MonthlyBasis\Group\Model\Entity as GroupEntity;
+use MonthlyBasis\Group\Model\Table as GroupTable;
 use MonthlyBasis\User\Model\Entity as UserEntity;
 
 class IsUserInGroup

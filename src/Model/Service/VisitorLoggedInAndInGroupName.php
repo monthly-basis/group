@@ -1,9 +1,9 @@
 <?php
-namespace LeoGalleguillos\Group\Model\Service;
+namespace MonthlyBasis\Group\Model\Service;
 
 use Exception;
-use LeoGalleguillos\Group\Model\Factory as GroupFactory;
-use LeoGalleguillos\Group\Model\Service as GroupService;
+use MonthlyBasis\Group\Model\Factory as GroupFactory;
+use MonthlyBasis\Group\Model\Service as GroupService;
 use MonthlyBasis\User\Model\Service as UserService;
 
 class VisitorLoggedInAndInGroupName
