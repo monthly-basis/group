@@ -20,7 +20,7 @@ class User extends AbstractHelper
      */
     public function __invoke(UserEntity\User $userEntity): Generator
     {
-        return $this->userService->getUserGroups(
+        return $this->userService->getGroups(
             $userEntity
         );
     }

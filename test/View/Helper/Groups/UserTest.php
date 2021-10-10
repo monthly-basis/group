@@ -31,7 +31,7 @@ class UserTest extends TestCase
             ;
         $this->userServiceMock
              ->expects($this->once())
-             ->method('getUserGroups')
+             ->method('getGroups')
              ->with($userEntity)
              ->willReturn($this->yieldGroupEntities());
              ;

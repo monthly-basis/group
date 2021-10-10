@@ -20,7 +20,7 @@ class User
     /**
      * @yield GroupEntity\Group
      */
-    public function getUserGroups(UserEntity\User $userEntity): Generator
+    public function getGroups(UserEntity\User $userEntity): Generator
     {
         $generator = $this->groupUserTable->selectWhereUserId(
             $userEntity->getUserId()

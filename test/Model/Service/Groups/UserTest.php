@@ -40,7 +40,7 @@ class UserTest extends TestCase
             )
         );
 
-        $groups = $this->userService->getUserGroups($userEntity);
+        $groups = $this->userService->getGroups($userEntity);
         $this->assertInstanceOf(
             Generator::class,
             $groups
