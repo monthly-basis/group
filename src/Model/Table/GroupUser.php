@@ -7,10 +7,7 @@ use Laminas\Db\Adapter\Driver\Pdo\Result;
 
 class GroupUser
 {
-    /**
-     * @var Adapter
-     */
-    protected $adapter;
+    protected Adapter $adapter;
 
     public function __construct(Adapter $adapter)
     {
@@ -78,9 +75,6 @@ class GroupUser
         return (int) $row['count'];
     }
 
-    /**
-     * @return Generator
-     */
     public function selectWhereGroupId(int $groupId): Generator
     {
         $sql = '
@@ -124,9 +118,6 @@ class GroupUser
         return $this->adapter->query($sql)->execute($parameters);
     }
 
-    /**
-     * @return Generator
-     */
     public function selectWhereUserId(int $userId): Generator
     {
         $sql = '
