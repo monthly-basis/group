@@ -15,15 +15,22 @@ class Module
         return [
             'view_helpers' => [
                 'aliases' => [
-                    'getGroupFactory' => GroupHelper\Factory\Group::class,
-                    'isLoggedInUserInGroupName'   => GroupHelper\IsLoggedInUserInGroupName::class,
-                    'isUserInGroup'   => GroupHelper\IsUserInGroup::class,
+                    'getGroupFactory'                 => GroupHelper\Factory\Group::class,
+                    'getUserGroups'                   => GroupHelper\Groups\User::class,
+                    'isLoggedInUserInGroupName'       => GroupHelper\IsLoggedInUserInGroupName::class,
+                    'isUserInGroup'                   => GroupHelper\IsUserInGroup::class,
                     'isVisitorLoggedInAndInGroupName' => GroupHelper\VisitorLoggedInAndInGroupName::class,
                 ],
                 'factories' => [
                     GroupHelper\Factory\Group::class => function ($serviceManager) {
                         return new GroupHelper\Factory\Group(
                             $serviceManager->get(GroupFactory\Group::class)
+                        );
+
+                    },
+                    GroupHelper\Groups\User::class => function ($serviceManager) {
+                        return new GroupHelper\Groups\User(
+                            $serviceManager->get(GroupService\Groups\User::class)
                         );
 
                     },
