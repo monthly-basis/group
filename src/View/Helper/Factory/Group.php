@@ -2,7 +2,7 @@
 namespace MonthlyBasis\Group\View\Helper\Factory;
 
 use MonthlyBasis\Group\Model\Factory as GroupFactory;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 
 class Group extends AbstractHelper
 {

@@ -4,7 +4,7 @@ namespace MonthlyBasis\Group\View\Helper;
 use MonthlyBasis\Group\Model\Entity as GroupEntity;
 use MonthlyBasis\Group\Model\Service as GroupService;
 use MonthlyBasis\User\Model\Entity as UserEntity;
-use Zend\View\Helper\AbstractHelper;
+use Laminas\View\Helper\AbstractHelper;
 
 class VisitorLoggedInAndInGroupName extends AbstractHelper
 {

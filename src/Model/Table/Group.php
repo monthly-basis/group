@@ -1,7 +1,7 @@
 <?php
 namespace MonthlyBasis\Group\Model\Table;
 
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 
 class Group
 {

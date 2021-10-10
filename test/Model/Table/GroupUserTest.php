@@ -4,9 +4,9 @@ namespace MonthlyBasis\GroupTest\Model\Table;
 use Generator;
 use MonthlyBasis\Group\Model\Table as GroupTable;
 use MonthlyBasis\LaminasTest\TableTestCase;
-use Zend\Db\Adapter\Adapter;
+use Laminas\Db\Adapter\Adapter;
 use PHPUnit\Framework\TestCase;
-use Zend\Db\Adapter\Exception\InvalidQueryException;
+use Laminas\Db\Adapter\Exception\InvalidQueryException;
 
 class GroupUserTest extends TableTestCase
 {
