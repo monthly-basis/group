@@ -56,8 +56,17 @@ class Module
                         $serviceManager->get(GroupTable\Group::class)
                     );
                 },
+                /*
+                 * @deprecated Use GroupService\Groups\User() instead
+                 */
                 GroupService\Groups::class => function ($serviceManager) {
                     return new GroupService\Groups(
+                        $serviceManager->get(GroupFactory\Group::class),
+                        $serviceManager->get(GroupTable\GroupUser::class)
+                    );
+                },
+                GroupService\Groups\User::class => function ($serviceManager) {
+                    return new GroupService\Groups\User(
                         $serviceManager->get(GroupFactory\Group::class),
                         $serviceManager->get(GroupTable\GroupUser::class)
                     );

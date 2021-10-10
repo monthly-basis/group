@@ -19,17 +19,9 @@ class GroupsTest extends TestCase
         $this->groupUserTableMock = $this->createMock(
             GroupTable\GroupUser::class
         );
-        $this->groupsService = new GroupService\Groups(
+        $this->userService = new GroupService\Groups\User(
             $this->groupFactoryMock,
             $this->groupUserTableMock
-        );
-    }
-
-    public function testInitialize()
-    {
-        $this->assertInstanceOf(
-            GroupService\Groups::class,
-            $this->groupsService
         );
     }
 
@@ -48,7 +40,7 @@ class GroupsTest extends TestCase
             )
         );
 
-        $groups = $this->groupsService->getGroups($userEntity);
+        $groups = $this->userService->getUserGroups($userEntity);
         $this->assertInstanceOf(
             Generator::class,
             $groups
