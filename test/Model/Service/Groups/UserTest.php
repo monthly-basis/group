@@ -1,5 +1,5 @@
 <?php
-namespace MonthlyBasis\GroupsTest\Model\Service;
+namespace MonthlyBasis\GroupsTest\Model\Service\Groups;
 
 use Generator;
 use MonthlyBasis\Group\Model\Entity as GroupEntity;
@@ -9,7 +9,7 @@ use MonthlyBasis\Group\Model\Table as GroupTable;
 use MonthlyBasis\User\Model\Entity as UserEntity;
 use PHPUnit\Framework\TestCase;
 
-class GroupsTest extends TestCase
+class UserTest extends TestCase
 {
     protected function setUp(): void
     {
@@ -25,7 +25,7 @@ class GroupsTest extends TestCase
         );
     }
 
-    public function testGetGroups()
+    public function test_getGroups()
     {
         $userEntity = new UserEntity\User();
         $userEntity->setUserId(123);

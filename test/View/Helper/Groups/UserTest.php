@@ -1,5 +1,5 @@
 <?php
-namespace MonthlyBasis\GroupsTest\Model\Service\Groups;
+namespace MonthlyBasis\GroupsTest\View\Helper\Groups;
 
 use Generator;
 use MonthlyBasis\Group\Model\Entity as GroupEntity;
