@@ -17,6 +17,9 @@ class User
         $this->groupUserTable = $groupUserTable;
     }
 
+    /**
+     * @yield GroupEntity\Group
+     */
     public function getUserGroups(UserEntity\User $userEntity): Generator
     {
         $generator = $this->groupUserTable->selectWhereUserId(
