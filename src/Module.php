@@ -36,7 +36,7 @@ class Module
                     },
                     GroupHelper\IsLoggedInUserInGroupName::class => function ($serviceManager) {
                         return new GroupHelper\IsLoggedInUserInGroupName(
-                            $serviceManager->get(GroupService\IsLoggedInUserInGroupName::class)
+                            $serviceManager->get(GroupService\LoggedInUserInGroupName::class)
                         );
                     },
                     GroupHelper\IsUserInGroup::class => function ($serviceManager) {
@@ -78,8 +78,8 @@ class Module
                         $serviceManager->get(GroupTable\GroupUser::class)
                     );
                 },
-                GroupService\IsLoggedInUserInGroupName::class => function ($serviceManager) {
-                    return new GroupService\IsLoggedInUserInGroupName(
+                GroupService\LoggedInUserInGroupName::class => function ($serviceManager) {
+                    return new GroupService\LoggedInUserInGroupName(
                         $serviceManager->get(GroupFactory\Group::class),
                         $serviceManager->get(GroupService\IsUserInGroup::class),
                         $serviceManager->get(UserService\LoggedInUser::class)

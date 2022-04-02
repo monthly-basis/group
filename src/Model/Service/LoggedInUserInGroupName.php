@@ -8,7 +8,7 @@ use MonthlyBasis\Group\Model\Table as GroupTable;
 use MonthlyBasis\User\Model\Entity as UserEntity;
 use MonthlyBasis\User\Model\Service as UserService;
 
-class IsLoggedInUserInGroupName
+class LoggedInUserInGroupName
 {
     public function __construct(
         GroupFactory\Group $groupFactory,

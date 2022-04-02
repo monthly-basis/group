@@ -9,15 +9,15 @@ use Laminas\View\Helper\AbstractHelper;
 class IsLoggedInUserInGroupName extends AbstractHelper
 {
     public function __construct(
-        GroupService\IsLoggedInUserInGroupName $isLoggedInUserInGroupNameService
+        GroupService\LoggedInUserInGroupName $loggedInUserInGroupNameService
     ) {
-        $this->isLoggedInUserInGroupNameService = $isLoggedInUserInGroupNameService;
+        $this->loggedInUserInGroupNameService = $loggedInUserInGroupNameService;
     }
 
     public function __invoke(
         string $groupName
     ): bool {
-        return $this->isLoggedInUserInGroupNameService->isLoggedInUserInGroupName(
+        return $this->loggedInUserInGroupNameService->isLoggedInUserInGroupName(
             $groupName
         );
     }
