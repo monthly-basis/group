@@ -41,7 +41,7 @@ class GroupUserTest extends TableTestCase
     public function test_selectCountWhereGroupNameAndUserId_multipleRows_variousResults()
     {
         $this->assertSame(
-            '0',
+            0,
             $this->groupUserTable
                 ->selectCountWhereGroupNameAndUserId('Tutor', 123)
                 ->current()['count']
@@ -54,25 +54,25 @@ class GroupUserTest extends TableTestCase
         $this->groupUserTable->insert(2, 456);
 
         $this->assertSame(
-            '1',
+            1,
             $this->groupUserTable
                 ->selectCountWhereGroupNameAndUserId('Webmaster', 123)
                 ->current()['count']
         );
         $this->assertSame(
-            '1',
+            1,
             $this->groupUserTable
                 ->selectCountWhereGroupNameAndUserId('Admin', 123)
                 ->current()['count']
         );
         $this->assertSame(
-            '0',
+            0,
             $this->groupUserTable
                 ->selectCountWhereGroupNameAndUserId('Webmaster', 456)
                 ->current()['count']
         );
         $this->assertSame(
-            '1',
+            1,
             $this->groupUserTable
                 ->selectCountWhereGroupNameAndUserId('Admin', 456)
                 ->current()['count']
