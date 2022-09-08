@@ -60,18 +60,41 @@ class VisitorLoggedInAndInGroupNameTest extends TestCase
                 'Tutor'
             )
         );
+        /*
+         * Assert false a second time to ensure that cache was used
+         * and therefore mock methods were called only once.
+         */
+        $this->assertFalse(
+            $this->visitorLoggedInAndInGroupNameService->isVisitorLoggedInAndInGroupName(
+                'Tutor'
+            )
+        );
     }
 
     public function test_isVisitorLoggedInAndInGroupName_visitorLoggedInAndInGroup_true()
     {
         $this->loggedInUserServiceMock
-            ->expects($this->once())
+            ->expects($this->exactly(2))
             ->method('getLoggedInUser');
         $this->isUserInGroupServiceMock
-            ->expects($this->once())
+            ->expects($this->exactly(2))
             ->method('isUserInGroup')
             ->willReturn(true);
 
+        $this->assertTrue(
+            $this->visitorLoggedInAndInGroupNameService->isVisitorLoggedInAndInGroupName(
+                'Tutor'
+            )
+        );
+        $this->assertTrue(
+            $this->visitorLoggedInAndInGroupNameService->isVisitorLoggedInAndInGroupName(
+                'Webmaster'
+            )
+        );
+        /*
+         * Assert true a third time to ensure that cache was used
+         * and therefore mock methods were only called twice.
+         */
         $this->assertTrue(
             $this->visitorLoggedInAndInGroupNameService->isVisitorLoggedInAndInGroupName(
                 'Tutor'
